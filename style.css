@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Poppins&family=Roboto:ital@0;1&display=swap');
 
 /* root styling */
-
 :root{
     --light: #f8f9f8;
     --secondary: #adb5bd;
@@ -111,13 +110,13 @@ a{
 
 
 /* Media Query */
-@media (max-width: 992px){
+@media (max-width: 1000px){
     .navbar{
         flex-direction: column;
     }
 }
 
-@media (max-width: 574px){
+@media (max-width: 600px){
     .toggle-button{
         display: initial;
     }
@@ -125,6 +124,7 @@ a{
     .collapse{
         max-height: 0;
         overflow: hidden;
+        transition: all 0.8s cubic-bezier(1, 0.02, 0, 0.97);
     }
 
     .collapse .nav-link{
@@ -134,5 +134,9 @@ a{
     
     .search-box{
         border-right: none;
+    }
+
+    .collapse-toggle{
+        max-height: 500px;
     }
 }
