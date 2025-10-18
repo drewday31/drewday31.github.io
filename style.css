@@ -2,12 +2,10 @@
 
 /* root styling */
 :root{
-    --light: #f8f9f8;
-    --secondary: #adb5bd;
-    --dark: #343a40;
-    --primary-color: #f15bb5;
-    --secondary-color: #2ec4bd;
-    --border: #e9ecef;
+    --background: #dad7cd;
+    --light: #669bbc;
+    --secondary: #274c77;
+    --dark: #003049;
 }
 
 body{
@@ -38,8 +36,8 @@ a{
     color: var(--dark);
 }
 
-.text-primary{
-    color: var(--primary-color);
+.bg{
+    background-color: var(--background);
 }
 
 .bg-light{
@@ -51,6 +49,50 @@ a{
     padding: 0 15px;
     margin: auto;
 }
+
+.img-fluid{
+    width: 100%;
+}
+
+.text-title{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+}
+
+.secondary-title{
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-text{
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+}
+
+.display-1{
+    font-size: 22px;
+}
+
+.display-2{
+    font-size: 16px;
+}
+
+.display-3{
+    font-size: 14px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.shadow{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
 /* section styling */
 
 /* ------- Navigation Menu ------- */
@@ -108,11 +150,56 @@ a{
 
 /* ------- .Navigation Menu ------- */
 
+/* --------- Main Section --------- */
+
+#site-main{
+    margin-top: 8em;
+}
+
+#posts{
+    margin-bottom: 4em;
+}
+
+.grid{
+    margin: 0 auto;
+}
+
+.grid .grid-item{
+    
+    margin-bottom: 3em;
+}
+
+/* --------- .Main Section --------- */
+
+/* ------------ Footer ------------ */
+.footer{
+    padding: 2em;
+}
+
+.copyrights{
+    padding: 10px 0;
+}
+/* ------------ .Footer ------------ */
+
+/* ------------ Sticky ------------ */
+
+.sticky{
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+}
+
+/* ------------ .Sticky ------------ */
 
 /* Media Query */
 @media (max-width: 1000px){
     .navbar{
         flex-direction: column;
+    }
+
+    #site-main{
+        margin-top: 17em;
     }
 }
 
@@ -138,5 +225,9 @@ a{
 
     .collapse-toggle{
         max-height: 500px;
+    }
+
+    #site-main{
+        margin-top: 8em;
     }
 }
