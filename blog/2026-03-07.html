@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRIAGE_NOTES | {{ TITLE }}</title>
+    <link rel="website icon" type="jpg" href="../assets/drew-nobg.png">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg">
+    <!-- Header -->
+    <header id="header" class="shadow bg-dark">
+        <nav class="container navbar">
+            <a href="" class="nav-brand text-dark">Drew Day</a>
+
+            <!-- toggle button -->
+            <button class="toggle-button">
+                <span class="nav-link"><i class="fas fa-bars"></i></span>
+            </button>
+
+            <!-- collapse on toggle button click -->
+            <div class="collapse">
+                <ul class="container navbar-nav">
+                    <a href="/aboutme" class="nav-link">[About]</a>
+                    <a href="/blog" class="nav-link">[Blog]</a>
+                    <a href="/projects" class="nav-link">[Projects]</a>
+                    <a href="/resume" class="nav-link">[Resume]</a>
+                </ul>
+            </div>
+            
+            <!-- collapse on toggle button click -->
+            <div class="collapse">
+                <ul class="container navbar-nav">
+                    <a href="https://www.linkedin.com/in/drewday01" title="LinkedIn" class="nav-link"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/drewday31" title="Github" class="nav-link"><i class="fa-brands fa-github"></i></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- .Header -->
+
+    <main class="terminal-window post-view">
+        <div class="terminal-header" style="display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 8px 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="dots" style="display: flex; gap: 6px;">
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></div>
+            </div>
+            <div class="text-secondary" style="margin-left: 15px; font-size: 0.7rem; opacity: 0.5; letter-spacing: 1px;">ROOT/TRIAGE_NOTES/BLOG/</div>
+        </div>
+
+        <article class="terminal-body">
+            <h1 class="post-title">{{ TITLE }}</h1>
+            
+            <div class="post-metadata" style="display: flex; gap: 20px; font-family: 'Roboto Mono', monospace; font-size: 0.8rem; opacity: 0.7; margin-bottom: 15px;">
+                <span class="meta-item text-secondary">DATE: {{ DATE }}</span>
+                <span class="meta-item text-secondary">DECODE_TIME: {{ READING_TIME }} MIN</span>
+            </div>
+
+            <div class="post-metadata" style="display: flex; gap: 20px; font-family: 'Roboto Mono', monospace; font-size: 0.8rem; opacity: 0.7; margin-bottom: 15px;">
+                <span class="meta-item text-secondary">CLASSIFICATION: {{ CLASSIFICATION }}</span>
+                <span class="meta-item text-secondary">STATUS: {{ STATUS }}</span>
+                <div class="action-bar" style="margin-bottom: 25px;">
+                    <button onclick="copyLink()" class="share-btn text-secondary">[ SHARE ]</button> <!-- MAKE THIS A PLANE ICON -->
+                </div>
+            </div>
+            <hr class="dim-hr">
+            
+            <div class="markdown-content text-secondary">{{ CONTENT }}</div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-dark">
+        <div class="copyrights text-center">
+            <p></p>
+            <p class="footer-text display-3 text-dark text-center">
+                Copyright © 2025 Drew Day. All rights reserved
+            </p>
+            <p></p>
+        </div>
+    </footer>
+    <!-- .Footer -->
+
+</body>
+</html>
