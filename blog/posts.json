@@ -8,5 +8,15 @@
     "tags": "",
     "reading_time": "1",
     "url": "blog/2026-03-07.html"
+  },
+  {
+    "title": "Second Test Blog Post",
+    "date": "2025-12-30",
+    "summary": "A test of my custom automated HTML blog translator using Github Actions. Will be deleted.",
+    "classification": "PRIVATE",
+    "status": "ACTIVE",
+    "tags": "",
+    "reading_time": "2",
+    "url": "blog/2025-12-30.html"
   }
 ]
