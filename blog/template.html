@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TRIAGE_NOTES | {{ TITLE }}</title>
+    <title>TRIAGE_NOTES | $title$</title>
     <link rel="website icon" type="jpg" href="../assets/drew-nobg.png">
 
     <link rel="stylesheet" href="../style.css">
@@ -52,23 +52,23 @@
         </div>
 
         <article class="terminal-body">
-            <h1 class="post-title">{{ TITLE }}</h1>
+            <h1 class="post-title">$title$</h1>
             
             <div class="post-metadata" style="display: flex; gap: 20px; font-family: 'Roboto Mono', monospace; font-size: 0.8rem; opacity: 0.7; margin-bottom: 15px;">
-                <span class="meta-item text-secondary">DATE: {{ DATE }}</span>
-                <span class="meta-item text-secondary">DECODE_TIME: {{ READING_TIME }} MIN</span>
+                <span class="meta-item text-secondary">DATE: $date$</span>
+                <span class="meta-item text-secondary">DECODE_TIME: $reading_time$ MIN</span>
             </div>
 
             <div class="post-metadata" style="display: flex; gap: 20px; font-family: 'Roboto Mono', monospace; font-size: 0.8rem; opacity: 0.7; margin-bottom: 15px;">
-                <span class="meta-item text-secondary">CLASSIFICATION: {{ CLASSIFICATION }}</span>
-                <span class="meta-item text-secondary">STATUS: {{ STATUS }}</span>
+                <span class="meta-item text-secondary">CLASSIFICATION: $classification$</span>
+                <span class="meta-item text-secondary">STATUS: $status$</span>
                 <div class="action-bar" style="margin-bottom: 25px;">
                     <button onclick="copyLink()" class="share-btn text-secondary">[ SHARE ]</button> <!-- MAKE THIS A PLANE ICON -->
                 </div>
             </div>
             <hr class="dim-hr">
             
-            <div class="markdown-content text-secondary">{{ CONTENT }}</div>
+            <div class="markdown-content text-secondary">$body$</div>
         </article>
     </main>
 
