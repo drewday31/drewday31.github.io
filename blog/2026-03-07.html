@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TRIAGE_NOTES | {{ TITLE }}</title>
+    <title>TRIAGE_NOTES | Test Blog Post</title>
     <link rel="website icon" type="jpg" href="../assets/drew-nobg.png">
 
     <link rel="stylesheet" href="../style.css">
@@ -52,23 +52,27 @@
         </div>
 
         <article class="terminal-body">
-            <h1 class="post-title">{{ TITLE }}</h1>
+            <h1 class="post-title">Test Blog Post</h1>
             
             <div class="post-metadata" style="display: flex; gap: 20px; font-family: 'Roboto Mono', monospace; font-size: 0.8rem; opacity: 0.7; margin-bottom: 15px;">
-                <span class="meta-item text-secondary">DATE: {{ DATE }}</span>
-                <span class="meta-item text-secondary">DECODE_TIME: {{ READING_TIME }} MIN</span>
+                <span class="meta-item text-secondary">DATE: 2026-03-07</span>
+                <span class="meta-item text-secondary">DECODE_TIME: 1 MIN</span>
             </div>
 
             <div class="post-metadata" style="display: flex; gap: 20px; font-family: 'Roboto Mono', monospace; font-size: 0.8rem; opacity: 0.7; margin-bottom: 15px;">
-                <span class="meta-item text-secondary">CLASSIFICATION: {{ CLASSIFICATION }}</span>
-                <span class="meta-item text-secondary">STATUS: {{ STATUS }}</span>
+                <span class="meta-item text-secondary">CLASSIFICATION: PRIVATE</span>
+                <span class="meta-item text-secondary">STATUS: ACTIVE</span>
                 <div class="action-bar" style="margin-bottom: 25px;">
                     <button onclick="copyLink()" class="share-btn text-secondary">[ SHARE ]</button> <!-- MAKE THIS A PLANE ICON -->
                 </div>
             </div>
             <hr class="dim-hr">
             
-            <div class="markdown-content text-secondary">{{ CONTENT }}</div>
+            <div class="markdown-content text-secondary"><p>Wanted
+features: Hidden CTF Flags Maybe some in the console Maybe some hidden
+in the HTML Maybe some hidden within a blog post A terminal on the home
+page to enter the Flags The website will create cookies when you find a
+Flags Writeups for each of the CTF challenges</p></div>
         </article>
     </main>
 
