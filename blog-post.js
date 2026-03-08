@@ -15,7 +15,7 @@ async function loadRecentIntel() {
                 <div class="card-meta">${post.date} | ${post.reading_time}MIN_READ</div>
                 <h4 class="card-title">${post.title}</h4>
                 <p class="card-desc">${post.summary}</p>
-                <a href="${post.url}" class="read-link">ACCESS_LOG -></a>
+                <a href="${post.url.replace('.html', '')}" class="read-link">ACCESS_LOG -></a>
             </article>
         `).join('');
 
