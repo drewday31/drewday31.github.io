@@ -1,0 +1,65 @@
+name: Triage_Notes_Autopublish
+on:
+  push:
+    paths:
+      - 'markdown/**' # Only runs when you change something in the markdown folder
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Tools
+        run: sudo apt-get install -y pandoc jq
+
+      - name: Process Markdown to HTML and Update JSON
+        run: |
+          touch blog/temp_posts.json
+          
+          for file in markdown/*.md; do
+            [ -e "$file" ] || continue
+
+            # Key Extraction (using grep to find the keys)
+            post_date=$(grep '^date:' "$file" | cut -d'"' -f2)
+            post_title=$(grep '^title:' "$file" | cut -d'"' -f2)
+            post_summary=$(grep '^summary:' "$file" | cut -d'"' -f2)
+            post_class=$(grep '^classification:' "$file" | cut -d'"' -f2)
+            post_status=$(grep '^status:' "$file" | cut -d'"' -f2)
+            post_tags=$(grep '^tags:' "$file" | cut -d'"' -f2)
+
+            # Reading Time Calculation
+            words=$(wc -w < "$file")
+            reading_time=$(( (words / 238) + 1 ))
+            
+            output_filename="${post_date}.html"
+
+            # Pandoc Conversion with HTML template
+            pandoc "$file" \
+              --template=blog/template.html \
+              --metadata reading_time="$reading_time" \
+              --metadata classification="$post_class" \
+              --metadata status="$post_status" \
+              -o "blog/$output_filename"
+
+            # Update JSON
+            echo "{\"title\": \"$post_title\", \"date\": \"$post_date\", \"summary\": \"$post_summary\", \"classification\": \"$post_class\", \"status\": \"$post_status\", \"tags\": \"$post_tags\", \"reading_time\": \"$reading_time\", \"url\": \"blog/$output_filename\"}" >> blog/temp_posts.json
+          done
+
+          if [ -s blog/temp_posts.json ]; then
+            cat blog/temp_posts.json | jq -s 'sort_by(.date) | reverse' > blog/posts.json
+          else
+            echo "[]" > blog/posts.json
+          fi
+          rm -f blog/temp_posts.json
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add blog/
+          git commit -m "System AutoUpdate: Published new Blog Post" || exit 0
+          git push

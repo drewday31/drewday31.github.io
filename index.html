@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drew Day</title>
+    <title>Drew Day - Home</title>
 
-    <!-- font awsome icons cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="website icon" type="jpg" href="assets/drew-nobg.png">
 
-    <!-- custom style.css file -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
 </head>
 
@@ -21,23 +21,22 @@
 
             <!-- toggle button -->
             <button class="toggle-button">
-                <span><i class="fas fa-bars"></i></span>
+                <span class="nav-link"><i class="fas fa-bars"></i></span>
             </button>
 
             <!-- collapse on toggle button click -->
             <div class="collapse">
-                <ul class="navbar-nav">
-                    <a href="/aboutme" class="nav-link">About</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/projects" class="nav-link">Projects</a>
-                    <a href="/resume" class="nav-link">Resume</a>
+                <ul class="container navbar-nav">
+                    <a href="/aboutme" class="nav-link">[About]</a>
+                    <a href="/blog" class="nav-link">[Blog]</a>
+                    <a href="/projects" class="nav-link">[Projects]</a>
+                    <a href="/resume" class="nav-link">[Resume]</a>
                 </ul>
             </div>
             
             <!-- collapse on toggle button click -->
             <div class="collapse">
-                <ul class="navbar-nav">
-                    
+                <ul class="container navbar-nav">
                     <a href="https://www.linkedin.com/in/drewday01" title="LinkedIn" class="nav-link"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="https://github.com/drewday31" title="Github" class="nav-link"><i class="fa-brands fa-github"></i></a>
                 </ul>
@@ -47,14 +46,59 @@
     <!-- .Header -->
 
     <!-- Main Site -->
-     <main id="home" class="site-main">
+    <main id="home" class="site-main">
         <div class="scanline"></div>
-        <p class="main-title text-dark text-center"> Cyber_Enthusiast </p>
-        <!-- Blog Post Section -->
-         <p class="text-title display-1 text-secondary text-left">> Work in Progress...</p>
-         <p class="text-title display-1 text-secondary text-left">> Come back soon</p>
-        <!-- Blog Post Section -->
-     </main>
+
+        <!-- Title -->
+        <p class="footer-text"></p>
+        <p class="footer-text"></p>
+        <p class="main-title text-dark text-center"> TRIAGE_NOTES </p>
+        <p class="secondary-title display-1 text-secondary text-center">Current Status: Junior at The University of Texas at San Antonio</p>
+        <p class="footer-text"></p>
+        <p class="footer-text"></p>
+        <p class="footer-text"></p>
+        <p class="footer-text"></p>
+        <!-- .Title -->
+
+        <!-- Recent Blog Post Section -->
+        <section class="blog-preview-section">
+            <h3 class="section-label">// RECENT_BLOG_POSTS</h3>
+            <div class="recent-posts-container"></div>
+        </section>
+        <!-- .Recent Blog Post Section -->
+
+        <p class="footer-text"></p>
+
+        <!-- Terminal -->
+        
+        <!--
+        <section class="terminal-window">
+            <div class="terminal-header" style="display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 8px 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                <div class="dots" style="display: flex; gap: 6px;">
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></div>
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></div>
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></div>
+                </div>
+                <div class="text-secondary" style="margin-left: 15px; font-size: 0.7rem; opacity: 0.5; letter-spacing: 1px;">SECURE_TERMINAL</div>
+            </div>
+
+            <div class="terminal-body">
+                <p>> Initializing local_node...</p>
+                <p>> <span style="color: #fff;">USER:</span> guest</p>
+                <p>> <span style="color: #fff;">STATUS:</span> Exploring Security Architecture and Information Systems.</p>
+                <br>
+                <p>> Type 'help' for more info or scroll for repository access.</p>
+            </div>
+        </section>
+        -->
+
+        <!-- .Terminal -->
+
+        <!--<p class="secondary-title display-1 text-secondary text-left">C:\home> Initializing secure console... <span class="text-dark">[SUCCESS]</span></p>
+        <p class="footer-text"></p>
+        <p class="footer-text"></p>
+        <p class="footer-text"></p> -->
+    </main>
     <!-- .Main Site -->
 
     <!-- Footer -->
@@ -67,7 +111,6 @@
             <p></p>
         </div>
     </footer>
-
     <!-- .Footer -->
 
     <!-- custom javascript main.js file -->

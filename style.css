@@ -10,7 +10,7 @@
 }
 
 body{
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto Mono', monospace;
     padding:0;
     margin:0;
 }
@@ -66,7 +66,7 @@ a{
 }
 
 .secondary-title{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .footer-text{
@@ -127,7 +127,7 @@ a{
 }
 
 .nav-brand{
-    font-family: "DM Sans", sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-weight: bold;
     align-self: center;
     font-size: 32px;
@@ -141,12 +141,12 @@ a{
 .nav-link{
     font-size: 18px;
     margin: 12px;
-    color: var(--main);
-    font-family: "Poppins", sans-serif;
+    color: var(--secondary);
+    font-family: 'Roboto Mono', monospace;
 }
 
 .nav-link:hover{
-    color: var(--primary-color);
+    color: var(--main);
 }
 
 .search-box{
@@ -212,7 +212,7 @@ main {
     left: 0;
     z-index: 2;           /* Sits above main content but below header */
     pointer-events: none;
-    animation: scan-main 8s linear infinite;
+    animation: scan-main 10s linear infinite;
 }
 
 @keyframes scan-main {
@@ -284,4 +284,135 @@ main {
     #site-main{
         margin-top: 8em;
     }
+}
+
+/* TERMINAL WINDOW */
+
+.terminal-window {
+    max-width: 750px; 
+    width: 90%; 
+    margin: 50px auto; 
+    
+    /* Deep translucent black background */
+    background: var(--bg2); 
+    
+    /* Strong blur creates the "premium" feel */
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+
+    /* The Border: Using very faint white/grey instead of green */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    border-radius: 12px; 
+    overflow: hidden;
+
+    /* Soft outer shadow + subtle inner glow for depth */
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.7),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    
+    position: relative;
+    z-index: 10; 
+}
+
+/* Make the text content breathe */
+.terminal-body {
+    padding: 30px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    /* Use a slightly desaturated green for the text so it's not piercing */
+    color: var(--main-bright); 
+}
+
+/* RECENT BLOG POSTS */
+
+.blog-preview-section {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+.section-label {
+    color: var(--main);
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.recent-posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.intel-card {
+    background: var(--bg2); /* Very subtle contrast */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Faint green border */
+    border-radius: 12px; /* Rounded edges */
+    padding: 20px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.7),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 10; 
+}
+
+.intel-card:hover {
+    background: rgba(0, 255, 65, 0.05);
+    border-color: rgba(0, 255, 65, 0.4);
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.card-meta {
+    font-size: 0.7rem;
+    color: var(--secondary); /* Or your dim green */
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.card-title {
+    color: var(--main);
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+}
+
+.card-desc {
+    font-size: 0.85rem;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.read-link {
+    color: var(--main);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+
+/* Background Effects */
+.vignette {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, transparent 50%, black 150%);
+    pointer-events: none;
+}
+
+.scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 1;
+    position: absolute;   /* Stays relative to <main>, not the window */
+    top: 0;
+    left: 0;
 }
