@@ -39,7 +39,7 @@ jobs:
 
             # Pandoc Conversion with HTML template
             pandoc "$file" \
-              --template=blog/template.html \
+              --template=layouts/template.html \
               --metadata reading_time="$reading_time" \
               --metadata classification="$post_class" \
               --metadata status="$post_status" \
