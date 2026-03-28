@@ -2,7 +2,7 @@
 async function injectLayout() {
     try {
         // Inject Header
-        const headerRes = await fetch('/header.html');
+        const headerRes = await fetch('../layouts/header.html');
         const headerHtml = await headerRes.text();
         const headerPlaceholder = document.getElementById('header-placeholder');
         
@@ -16,7 +16,7 @@ async function injectLayout() {
         }
 
         // Inject Footer
-        const footerRes = await fetch('/footer.html');
+        const footerRes = await fetch('../layouts/footer.html');
         const footerHtml = await footerRes.text();
         const footerPlaceholder = document.getElementById('footer-placeholder');
         if (footerPlaceholder) footerPlaceholder.innerHTML = footerHtml;
