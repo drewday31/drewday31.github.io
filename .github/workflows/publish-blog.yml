@@ -1,6 +1,9 @@
 name: Triage_Notes_Autopublish
 on:
   push:
+    branches:
+      - main
+      - unpublished
     paths:
       - 'markdown/**' # Only runs when you change something in the markdown folder
 
@@ -11,7 +14,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Tools
         run: sudo apt-get install -y pandoc jq
@@ -55,11 +58,18 @@ jobs:
             echo "[]" > blog/posts.json
           fi
           rm -f blog/temp_posts.json
-
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add blog/
-          git commit -m "System AutoUpdate: Published new Blog Post" || exit 0
-          git push
+      - name: Upload Preview Artifact
+        if: github.ref == 'refs/heads/unpublished'
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-preview
+          path: |
+            blog/
+            index.html
+      
+      - name: Deploy to GitHub Pages branches
+        if: github.ref == 'refs/heads/main'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: . # Deploys your root repository structure (including your updated blog/ folder)
+          branch: gh-pages
